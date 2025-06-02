@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "PAP 2025",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OyamoCodes/User404.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OyamoCodes/User404/issues"
+  },
+  "homepage": "https://github.com/OyamoCodes/User404#readme"
 }
