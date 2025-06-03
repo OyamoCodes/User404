@@ -1,4 +1,16 @@
 export class Level{
+    drawHotbar(hour){
+        let offset = -100;
+        for (let i = 0; i < 10; i++) {
+            add([sprite("test", {anim}),
+                pos(center().x + offset, center().y + 200),
+                area(),
+                anchor("center"),
+                color(0, 0, 0),
+            ]);
+            offset += 20;
+        }
+    }
     drawMapLayout(levelLayout, mappings){
         const layerSettings = {
             tileWidth:16, 
@@ -13,10 +25,11 @@ export class Level{
             layer.use()
         }
     }
-    drawBackground(bgSpriteName) {
+    drawBackground(sky_bg) {
         add([
-            sprite("bgSpriteName"),
+            sprite("sky_bg"),
             fixed(),
+            scale(2)
         ]);
     }
 }

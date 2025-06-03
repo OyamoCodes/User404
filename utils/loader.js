@@ -1,15 +1,27 @@
 export const load = {
-    fonts: ( ) => {
+    fonts: () => {
         loadFont("Tahoma", "./assets/fonts/tahoma.ttf");
     },
-    assets: ( ) => {
+    assets: () => {
         loadSprite("icon", "./assets/images/icon.png");
-        loadSprite("bg_menu", "./assets/images/bg.png");
+        loadSprite("bg_menu", "./assets/images/bg_menu.png");
+        loadSprite("sky_bg", "./assets/images/sky_bg.png");
         loadSprite("test", "./assets/images/test.png");
         //1h31min
-        loadSprite("grass-tileset", "./assets/images/grass-tileset.png",{
-            sliceX: 1,
-            sliceY: 1,
+        loadSprite("grass-tileset", "./assets/images/grass_tileset.png", {
+            sliceX: 3,
+            sliceY: 3,
+            anims: {
+                tl: 0,
+                tm: 1,
+                tr: 2,
+                ml: 3,
+                mm: 4,
+                mr: 5,
+                bl: 6,
+                bm: 7,
+                br: 8,
+            },
         });
     },
     sounds: () => {
