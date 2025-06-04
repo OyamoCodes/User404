@@ -1,5 +1,8 @@
+
 export function generateMappings(tileType) {
     return {
+        tileWidth: 16,
+        tileHeight: 16,
         0: () => [
             sprite(`${tileType}-tileset`, { anim: "tl" }),
             area(),
@@ -24,22 +27,35 @@ export function generateMappings(tileType) {
             body({ isStatic: true }),
             offscreen(),
         ],
-        4: () => [sprite(`${tileType}-tileset`, { anim: "mm" }), offscreen()],
+        4: () => [
+            sprite(`${tileType}-tileset`, { anim: "mm" }),
+            area(),
+            body({ isStatic: true }),
+            offscreen(),
+        ],
         5: () => [
             sprite(`${tileType}-tileset`, { anim: "mr" }),
             area(),
             body({ isStatic: true }),
             offscreen(),
         ],
-        6: () => [sprite(`${tileType}-tileset`, { anim: "bl" }), offscreen()],
-        7: () => [sprite(`${tileType}-tileset`, { anim: "bm" }), offscreen()],
-        8: () => [sprite(`${tileType}-tileset`, { anim: "mr" }), offscreen()],
-        /*9: () => [
-            sprite(`${tileType}-oneway-tileset`, { anim: "tl" }),
-            area({ shape: new Rect(vec2(0), 16, 3) }),
-            "passthrough",
+        6: () => [
+            sprite(`${tileType}-tileset`, { anim: "bl" }),
+            area(),
             body({ isStatic: true }),
             offscreen(),
-        ]*/
+        ],
+        7: () => [
+            sprite(`${tileType}-tileset`, { anim: "bm" }),
+            area(),
+            body({ isStatic: true }),
+            offscreen(),
+        ],
+        8: () => [
+            sprite(`${tileType}-tileset`, { anim: "br" }),
+            area(),
+            body({ isStatic: true }),
+            offscreen(),
+        ],
     }
 }

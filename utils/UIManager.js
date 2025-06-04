@@ -55,7 +55,6 @@ class UIManager {
         this.displayBlinkingUIMessage("Clica [ENTER] para começar", vec2(center().x, center().y + 100));
         
         onKeyPress("enter", () => {
-            play("start_windows", { speed: 1.3, volume: 0 });
             go("controls");
         });
     }
