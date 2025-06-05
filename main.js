@@ -7,9 +7,9 @@ import { Player } from "./assets/entities/Player.js";
 import { attachCamera } from "./utils/Camera.js";
 
 kaboom({
-    width: 1280, 
+    width: 1280,
     height: 720,
-    letterbox:true
+    letterbox: true
 })
 
 load.fonts()
@@ -17,26 +17,29 @@ load.sounds()
 load.assets()
 
 const scenes = {
-    menu: ()=>{
+    menu: () => {
         uiManager.displayMainMenu()
     },
-    controls: ()=>{
+    controls: () => {
         uiManager.displayControls()
     },
-    1: ()=>{
+    1: () => {
         setGravity(2000)
-        const level1= new Level()
-        level1.drawBackground("sky_bg")
-        level1.drawMapLayout(level1Layout, level1Mappings)
-        const player = new Player(200, 0, 400, 650, 1, false)
+        const level1 = new Level()
+        level1.drawBackground("sky_bg", scale(0.2))
+        addLevel(level1Layout, {
+            tileWidth: 32,
+            tileHeight: 32,
+            tiles: level1Mappings,
+        });
+        const player = new Player(200, -150, 400, 650, 1, false)
         attachCamera(player.gameObj, 0, -100);
     },
-    2: ()=>{
-        const level2 = new Level()
+    2: () => {
     },
-    3: ()=>{
+    3: () => {
     },
-    end: ()=>{
+    end: () => {
     }
 }
 

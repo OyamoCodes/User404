@@ -13,7 +13,7 @@ export class Player {
     makePlayer(posX, posY) {
         this.gameObj = add([
             sprite("player", { anim: "idle" }),
-            area({ shape: new Rect(vec2(0, 3), 8, 8) }),
+            area(),
             anchor("center"),
             pos(posX, posY),
             scale(0.7),
@@ -38,13 +38,14 @@ export class Player {
         onKeyPress("w", () => {
             if (this.gameObj.paused) return;
             if (this.gameObj.isGrounded() && !this.hasJumpedOnce) {
+                this.gameObj.play("jump")
                 this.gameObj.jump(this.jumpForce);
                 this.hasJumpedOnce = true;
             }
         });
 
         onKeyRelease(() => {
-            if (isKeyReleased("a") || isKeyReleased("d")) {
+            if (isKeyReleased("a") || isKeyReleased("d") || isKeyReleased("w")) {
                 this.gameObj.play("idle")
             }
         })
