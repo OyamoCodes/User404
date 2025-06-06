@@ -1,4 +1,19 @@
 class UIManager {
+    displayHotbar(element) {
+        add([
+            sprite("hotbar"),
+            fixed(),
+            z(150),
+        ])
+        if (element) {
+            add([
+                sprite(element),
+                fixed(),
+                z(100),
+            ])
+
+        }
+    }
     displayBlinkingUIMessage(content, position) {
         const message = add([
             text(content, {
@@ -53,7 +68,7 @@ class UIManager {
             scale(0.7),
         ])
         this.displayBlinkingUIMessage("Clica [ENTER] para começar", vec2(center().x, center().y + 100));
-        
+
         onKeyPress("enter", () => {
             go("controls");
         });

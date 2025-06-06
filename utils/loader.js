@@ -23,11 +23,11 @@ export const load = {
                 },
                 run: {
                     from: 2,
-                    to: 3,
+                    to: 4,
                     loop: true,
-                    speed: 5,
+                    speed: 7,
                 },
-                jump: { from: 0, to: 1, loop: false },
+                jump: { from: 0, to: 1, loop: true, speed: 2.5 },
             },
         })
 

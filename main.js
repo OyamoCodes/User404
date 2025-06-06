@@ -28,16 +28,14 @@ const scenes = {
         const level1 = new Level()
         level1.drawBackground("sky_bg", scale(0.2))
         addLevel(level1Layout, {
-            tileWidth: 32,
-            tileHeight: 32,
+            tileWidth: 64,
+            tileHeight: 64,
             tiles: level1Mappings,
         });
         const player = new Player(200, -150, 400, 650, 1, false)
-        attachCamera(player.gameObj, 0, -100);
-    },
-    2: () => {
-    },
-    3: () => {
+        attachCamera(player.gameObj, 150, -100);
+        uiManager.displayHotbar("grass");
+
     },
     end: () => {
     }

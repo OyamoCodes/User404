@@ -44,6 +44,13 @@ export class Player {
             }
         });
 
+        onKeyPress("e", () => {
+            const touching = get("interactable").find(obj => player.gameObj.isTouching(obj));
+            if (touching) {
+                debug.log("Estás na zona de interação!");
+            }
+        });
+
         onKeyRelease(() => {
             if (isKeyReleased("a") || isKeyReleased("d") || isKeyReleased("w")) {
                 this.gameObj.play("idle")
