@@ -8,6 +8,7 @@ export const load = {
         loadSprite("sky_bg", "./assets/images/sky_bg.png");
         loadSprite("test", "./assets/images/test.png");
         loadSprite("hotbar", "./assets/images/hotbar.png");
+        loadSprite("notepad", "./assets/images/notepad.png");
         //1h31min
         loadSprite("grass", "./assets/images/grass_tileset.png");
 

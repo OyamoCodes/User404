@@ -4,7 +4,6 @@ export const level1Mappings = generateMappings()
 
 export const level1Layout = [
     "       ",
-    "       ",
     "      n",
-    "=========",
+    "=                 =                 =                 =                 =                 =                 =                 ==",
 ];

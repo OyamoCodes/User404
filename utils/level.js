@@ -12,7 +12,7 @@ export class Level{
         add([
             sprite("sky_bg"),
             fixed(),
-            scale(2)
+            scale()
         ]);
     }
 }

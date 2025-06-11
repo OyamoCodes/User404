@@ -11,10 +11,15 @@ export function generateMappings(tileType) {
         "n": () => [
             sprite("player", { anim: "idle" }),
             scale(0.7),
-            pos(200, -150),
-            area(),
-            color(255, 255, 255), 
-            "interactable",
+            pos(300, -150),  // Ajusta para uma posição visível
+            area({ width: 50, height: 80 }),         // Essencial para detectar colisões
+            "npc",
+            { npcId: "dummy" },  // Importante para identificar
         ],
+        "ç": () => [
+            sprite("wXP_Trash"),
+            scale(0.7),
+        ],
+
     }
 }
