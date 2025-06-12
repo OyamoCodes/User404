@@ -1,3 +1,4 @@
+import { checkInputBox } from "./InputCheckers.js";
 class UIGuide {
     displayGuidedUI(guideProgress) {
         switch (guideProgress) {
@@ -14,7 +15,6 @@ class UIGuide {
                         font: "Tahoma",
                     }),
                     color(BLACK),
-                    area(),
                     pos(855, 65),
                     fixed(),
                     z(300),
@@ -28,22 +28,25 @@ class UIGuide {
 
     }
 }
-export function showInputBox(callback) {
+export function showInputBox(callback, player) {
     let inputText = "";
 
     add([
         sprite("notepad"),
-        pos(100, 100),
+        pos(5, -160),
         scale(1),
-        z(1),
-        "notepad_ui", // 🔖 tag para depois remover
+        fixed(),
+        z(150),
+        "notepad_ui",
     ]);
 
     const inputTextDisplay = add([
         text("", { size: 24 }),
-        pos(120, 110),
-        z(2),
-        "notepad_ui", // 🔖 tag também
+        pos(15, 70),
+        fixed(),
+        color(0, 0, 0),
+        z(300),
+        "notepad_ui",
         {
             update() {
                 this.text = inputText;
@@ -52,18 +55,20 @@ export function showInputBox(callback) {
     ]);
 
     onCharInput((ch) => {
-        if (inputText.length < 20) {
+        if (inputText.length < 30) {
             inputText += ch;
         }
     });
 
-    onKeyPress("backspace", () => {
+    onKeyPressRepeat("backspace", () => {
         inputText = inputText.slice(0, -1);
     });
 
     onKeyPress("enter", () => {
         if (callback) callback(inputText);
+        checkInputBox(inputText, player);
     });
 }
+
 
 export const uiGuide = new UIGuide();

@@ -22,6 +22,7 @@ load.fonts()
 load.sounds()
 load.assets()
 
+
 const scenes = {
     menu: () => {
         uiManager.displayMainMenu()
@@ -43,16 +44,24 @@ const scenes = {
         uiManager.displayHotbar("grass");
         uiGuide.displayGuidedUI(player.guideProgress)
         onUpdate(() => {
-            if (player.inputBox === 1 && !get("inputbox_ui").length) {
+            if (player.inputBox === 1 && !get("notepad_ui").length) {
                 showInputBox((text) => {
                     console.log("User typed:", text);
-                    player.inputBox = 0;
-                });
+                }, player);
             }
-        });
+            if (player.inputBox === 0 && get("notepad_ui").length) {
+                destroyAll("notepad_ui");
+            }
 
+            onKeyPress("m", () => {
+                go("menu");
+            });
+
+        });
     },
     dragTest: () => {
+        const dragTest = new Level()
+        dragTest.drawBackground("wood_bg", 2);
     },
     end: () => {
     }

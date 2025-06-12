@@ -23,28 +23,27 @@ export class Player {
         ])
     }
     setPlayerControls() {
-        if (this.inputBox <= 0) {
-            onKeyDown("a", () => {
-                if (this.gameObj.paused) return
-                if (this.gameObj.curAnim() !== "run") this.gameObj.play("run")
-                this.gameObj.flipX = true
-                this.gameObj.move(-this.speed, 0);
-            })
-            onKeyDown("d", () => {
-                if (this.gameObj.paused) return
-                if (this.gameObj.curAnim() !== "run") this.gameObj.play("run")
-                this.gameObj.flipX = false
-                this.gameObj.move(this.speed, 0);
-            })
-            onKeyPress("w", () => {
-                if (this.gameObj.paused) return;
-                if (this.gameObj.isGrounded() && !this.hasJumpedOnce) {
-                    this.gameObj.play("jump")
-                    this.gameObj.jump(this.jumpForce);
-                    this.hasJumpedOnce = true;
-                }
-            });
-        }
+        onKeyDown("a", () => {
+            if (this.gameObj.paused || this.inputBox !== 0) return
+            if (this.gameObj.curAnim() !== "run") this.gameObj.play("run")
+            this.gameObj.flipX = true
+            this.gameObj.move(-this.speed, 0);
+            //console.log(this.inputBox);
+        })
+        onKeyDown("d", () => {
+            if (this.gameObj.paused || this.inputBox !== 0) return
+            if (this.gameObj.curAnim() !== "run") this.gameObj.play("run")
+            this.gameObj.flipX = false
+            this.gameObj.move(this.speed, 0);
+        })
+        onKeyPress("w", () => {
+            if (this.gameObj.paused || this.inputBox !== 0) return;
+            if (this.gameObj.isGrounded() && !this.hasJumpedOnce) {
+                this.gameObj.play("jump")
+                this.gameObj.jump(this.jumpForce);
+                this.hasJumpedOnce = true;
+            }
+        });
 
         onClick("npc", (npc) => {
             const npcId = npc.npcId;
@@ -54,13 +53,13 @@ export class Player {
                     console.log("Clicked NPC:", npcId);
                     add([
                         text(dialogues[0], { size: 18 }),
-                        pos(300, 300), // Ajuste a posição conforme necessário
+                        pos(300, 300),
                         anchor("center"),
                         color(255, 255, 255),
                         fixed(),
                         lifespan(3),
                     ]);
-                    this.inputBox = 1; // Define inputBox para 1 quando o NPC é clicado
+                    this.inputBox = 1;
                 }
             }
         });

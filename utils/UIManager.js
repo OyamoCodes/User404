@@ -67,11 +67,70 @@ class UIManager {
             pos(0, 660),
             scale(0.7),
         ])
+
+        //Botão
+        const startButton = add([
+            rect(200, 50),
+            pos(300, 300),
+            color(0, 0, 255),
+            area(),
+            anchor("center"),
+            z(100),
+            "start_button",
+        ])
+
+        add([
+            text("Começar", { size: 24, font: "Tahoma" }),
+            pos(startButton.pos),
+            anchor("center"),
+            z(101),
+        ])
+
+        startButton.onHover(() => {
+            startButton.color = rgb(0, 90, 200)
+        })
+        startButton.onHoverEnd(() => {
+            startButton.color = rgb(0, 70, 170)
+        })
+
+        startButton.onClick(() => {
+            go("1")
+        })
+
+        // Botão
+        const controlsButton = add([
+            rect(200, 50),
+            pos(300, 400),
+            color(0, 0, 255),
+            area(),
+            anchor("center"),
+            z(100),
+            "controls_button",
+        ])
+
+        add([
+            text("Controles", { size: 24, font: "Tahoma" }),
+            pos(controlsButton.pos),
+            anchor("center"),
+            z(101),
+        ])
+
+        controlsButton.onHover(() => {
+            controlsButton.color = rgb(0, 90, 200)
+        })
+        controlsButton.onHoverEnd(() => {
+            controlsButton.color = rgb(0, 70, 170)
+        })
+
+        controlsButton.onClick(() => {
+            go("dragTest")
+        })
         this.displayBlinkingUIMessage("Clica [ENTER] para começar", vec2(center().x, center().y + 100));
 
         onKeyPress("enter", () => {
             go("controls");
         });
+        
     }
 
     displayControls() {
