@@ -70,7 +70,7 @@ class UIManager {
 
         //Botão
         const startButton = add([
-            rect(200, 50),
+            rect(300, 75),
             pos(300, 300),
             color(0, 0, 255),
             area(),
@@ -80,7 +80,7 @@ class UIManager {
         ])
 
         add([
-            text("Começar", { size: 24, font: "Tahoma" }),
+            text("Começar", { size: 32, font: "Tahoma" }),
             pos(startButton.pos),
             anchor("center"),
             z(101),
@@ -99,7 +99,7 @@ class UIManager {
 
         // Botão
         const controlsButton = add([
-            rect(200, 50),
+            rect(300, 75),
             pos(300, 400),
             color(0, 0, 255),
             area(),
@@ -109,7 +109,7 @@ class UIManager {
         ])
 
         add([
-            text("Controles", { size: 24, font: "Tahoma" }),
+            text("Drag Test", { size: 32, font: "Tahoma" }),
             pos(controlsButton.pos),
             anchor("center"),
             z(101),

@@ -1,31 +1,40 @@
 import { checkInputBox } from "./InputCheckers.js";
+import { guideLines } from "./Guide.js";
 class UIGuide {
+    constructor() {
+        this.guideText = null;
+        this.guideSprite = null;
+    }
+
     displayGuidedUI(guideProgress) {
-        switch (guideProgress) {
-            case 0:
-                add([
-                    sprite("notepad"),
-                    fixed(),
-                    z(150),
-                    pos(845, -165),
-                ])
-                add([
-                    text("Press 'E' to interact with objects", {
-                        size: 24,
-                        font: "Tahoma",
-                    }),
-                    color(BLACK),
-                    pos(855, 65),
-                    fixed(),
-                    z(300),
-                ])
+        if (this.guideText) destroy(this.guideText);
+        if (this.guideSprite) destroy(this.guideSprite);
 
-                break;
+        this.guideSprite = add([
+            sprite("bonzi"),
+            fixed(),
+            scale(0.4),
+            z(150),
+            pos(1000, 100),
+        ]);
 
-            default:
-                break;
+        this.guideText = add([
+            text(guideLines.test[guideProgress] || "", {
+                size: 24,
+                font: "Tahoma",
+                align: "center",
+            }),
+            color(BLACK),
+            pos(850, 50),
+            fixed(),
+            z(300),
+        ]);
+    }
+
+    updateGuideText(guideProgress) {
+        if (this.guideText) {
+            this.guideText.text = guideLines.test[guideProgress] || "";
         }
-
     }
 }
 export function showInputBox(callback, player) {

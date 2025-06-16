@@ -1,11 +1,12 @@
 import { NPC_DIALOGS } from './Npc.js';
 export class Player {
     hasJumpedOnce = false
-    constructor(posX, posY, speed, jumpForce, guideProgress, inputBox) {
-        this.guideProgress = guideProgress;
-        this.inputBox = inputBox;
+    constructor(posX, posY, speed, jumpForce, guideProgress) {
         this.speed = speed;
         this.jumpForce = jumpForce;
+        this.inputBox = 0;
+        this.guideProgress = guideProgress;
+        this.guideShow = 1;
 
         this.makePlayer(posX, posY);
         this.previousHeight = this.gameObj.pos.y;

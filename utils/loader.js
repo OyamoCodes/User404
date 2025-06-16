@@ -10,6 +10,10 @@ export const load = {
         loadSprite("hotbar", "./assets/images/hotbar.png");
         loadSprite("notepad", "./assets/images/notepad.png");
         loadSprite("wood_bg", "./assets/images/wood_bg.png");
+        loadSprite("bonzi", "./assets/images/bonzi.gif");
+        loadSprite("rubber", "./assets/images/rubber.png");
+        loadSprite("ram_stick", "./assets/images/ram_stick.png");
+        loadSprite("motherboard", "./assets/images/motherboard.png");
         //1h31min
         loadSprite("grass", "./assets/images/grass_tileset.png");
 

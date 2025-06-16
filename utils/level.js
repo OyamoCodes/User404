@@ -8,11 +8,11 @@ export class Level{
             layer.use()
         }
     }
-    drawBackground(bg_name, scale) {
+    drawBackground(bg_name, size) {
         add([
             sprite(bg_name),
             fixed(),
-            scale(scale)
+            scale(size)
         ]);
     }
 }

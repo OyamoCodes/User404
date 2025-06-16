@@ -33,17 +33,18 @@ const scenes = {
     1: () => {
         setGravity(3000)
         const level1 = new Level()
-        level1.drawBackground("sky_bg")
+        level1.drawBackground("sky_bg", 1)
         addLevel(level1Layout, {
             tileWidth: 64,
             tileHeight: 64,
             tiles: level1Mappings,
         });
-        const player = new Player(level1Config.posX, level1Config.posY, level1Config.speed, level1Config.jumpForce, 0, 0);
+        const player = new Player(level1Config.posX, level1Config.posY, level1Config.speed, level1Config.jumpForce, 0);
         attachCamera(player.gameObj, 150, -100);
         uiManager.displayHotbar("grass");
         uiGuide.displayGuidedUI(player.guideProgress)
         onUpdate(() => {
+            //input
             if (player.inputBox === 1 && !get("notepad_ui").length) {
                 showInputBox((text) => {
                     console.log("User typed:", text);
@@ -53,11 +54,22 @@ const scenes = {
                 destroyAll("notepad_ui");
             }
 
-            onKeyPress("m", () => {
-                go("menu");
-            });
-
         });
+        onClick(() => {
+            if (player.guideShow === 1) {
+                player.guideProgress++;
+                uiGuide.updateGuideText(player.guideProgress);
+                console.log("Progresso:", player.guideProgress);
+            }
+        });
+
+        onKeyPress("m", () => {
+            go("menu");
+        });
+
+        if( player.guideProgress === 0) {
+            uiGuide.displayGuidedUI(player.guideProgress);
+        }
     },
     dragTest: () => {
         const dragTest = new Level()
