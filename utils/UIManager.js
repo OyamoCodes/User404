@@ -164,6 +164,38 @@ class UIManager {
             go("1");
         });
     }
+
+    displayControls() {
+        add([
+            sprite("bg_menu"),
+        ])
+        add([
+            text("Sobre", {
+                size: 48,
+                font: "Tahoma",
+            }),
+            area(),
+            anchor("center"),
+            pos(center().x, center().y - 100),
+        ])
+        const controlsText = add([
+            pos(center().x + 30, center().y),
+        ])
+        //1h
+        controlsText.add([
+            text("\nW - Pular\n\nA - Mover para a esquerda\n\nD - Mover para a direita\n\nE - Interagir", {
+                size: 24,
+                font: "Tahoma",
+            }),
+            area(),
+            anchor("center"),
+        ]);
+        this.displayBlinkingUIMessage("Clica [ENTER] para continuar", vec2(center().x, center().y + 150));
+        onKeyPress("enter", () => {
+            play("start_windows", { speed: 1.3, volume: 0 });
+            go("1");
+        });
+    }
 }
 
 export const uiManager = new UIManager();

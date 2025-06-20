@@ -7,6 +7,7 @@ import { Level } from "./utils/level.js"
 import { Player } from "./assets/entities/Player.js";
 import { attachCamera } from "./utils/Camera.js";
 import { uiGuide, showInputBox } from "./utils/UIGuide.js";
+import { startDragTest } from "./contents/drag/drag.js";
 
 
 kaboom({
@@ -67,13 +68,17 @@ const scenes = {
             go("menu");
         });
 
-        if( player.guideProgress === 0) {
+        if (player.guideProgress === 0) {
             uiGuide.displayGuidedUI(player.guideProgress);
         }
     },
     dragTest: () => {
         const dragTest = new Level()
-        dragTest.drawBackground("wood_bg", 2);
+        startDragTest(); // aqui colocas a lógica de drag
+    },
+
+    about: () => {
+        uiManager.displayAbout()
     },
     end: () => {
     }
