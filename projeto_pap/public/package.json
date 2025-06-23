@@ -1,0 +1,20 @@
+{
+  "name": "user_404",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "PAP 2025",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OyamoCodes/User404.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OyamoCodes/User404/issues"
+  },
+  "homepage": "https://github.com/OyamoCodes/User404#readme"
+}

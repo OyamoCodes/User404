@@ -1,0 +1,169 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    font-family: "Tahoma", Geneva, Verdana, sans-serif;
+}
+
+/* Fundo */
+body {
+    background: linear-gradient(to bottom, #0066cc, #003399);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa do formulário */
+.login-box {
+    background: #c0d8f0;
+    border: 2px solid #316ac5;
+    border-radius: 8px;
+    width: 320px;
+    padding: 30px 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+.login-box h2 {
+    font-weight: bold;
+    color: #0a2f73;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #a0c4ff;
+    user-select: none;
+}
+
+/* Labels */
+.login-box label {
+    display: block;
+    margin-bottom: 5px;
+    color: #0a2f73;
+    font-weight: 600;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* Inputs */
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px 8px;
+    margin-bottom: 20px;
+    border: 2px solid #316ac5;
+    border-radius: 4px;
+    background: #eaf3ff;
+    font-size: 14px;
+    color: #003366;
+    transition: border-color 0.3s ease;
+}
+
+.login-box input[type="email"]:focus,
+.login-box input[type="password"]:focus {
+    border-color: #104ecc;
+    outline: none;
+    background: #ffffff;
+}
+
+/* Botão */
+.login-box button.btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #3a78d8, #1d4ed8);
+    border: 2px solid #174db2;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow:
+        0 2px 0 #143d8a,
+        inset 0 1px 0 #6299ff;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+.login-box button.btn:hover {
+    background: linear-gradient(to bottom, #1d4ed8, #3a78d8);
+}
+
+/* Link “Entrar como convidado” */
+.login-box .guest a {
+    color: #174db2;
+    text-decoration: none;
+    user-select: none;
+    font-size: 14px;
+}
+
+.login-box .guest a:hover {
+    text-decoration: underline;
+}
+
+/* Hotbar estilo Windows XP */
+.xp-hotbar {
+    background: linear-gradient(to bottom, #3a78d8, #1d4ed8);
+    border-bottom: 2px solid #174db2;
+    box-shadow: inset 0 1px 0 #6299ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 9999;
+    user-select: none;
+}
+
+/* Lista de itens */
+.xp-hotbar-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Itens da lista - links */
+.xp-hotbar-list li a {
+    color: white;
+    background: linear-gradient(to bottom, #3a78d8, #1d4ed8);
+    border: 1px solid #174db2;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow:
+        0 2px 0 #143d8a,
+        inset 0 1px 0 #6299ff;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Hover efeito */
+.xp-hotbar-list li a:hover {
+    background: linear-gradient(to bottom, #1d4ed8, #3a78d8);
+    box-shadow:
+        0 2px 0 #143d8a,
+        inset 0 2px 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Link ativo */
+.xp-hotbar-list li a.active {
+    background: linear-gradient(to bottom, #1050d8, #173ea8);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7);
+    cursor: default;
+}
+
+/* Espaço para o conteúdo ficar abaixo da hotbar */
+.xp-main {
+    padding-top: 50px;
+    max-width: 960px;
+    margin: 20px auto;
+    user-select: none;
+}
