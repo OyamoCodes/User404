@@ -1,0 +1,45 @@
+/* resources/css/xp.css */
+
+body {
+    background: linear-gradient(to bottom, #3a6ea5, #9dbbe6);
+    font-family: Tahoma, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 18px;
+    color: #fff;
+    padding: 10px;
+    background: linear-gradient(to bottom, #0a246a, #1e4fd1);
+    border-bottom: 2px solid #000;
+    margin: 0;
+}
+
+.dashboard-wrapper {
+    padding: 20px;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border: 2px solid #c0c0c0;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 20px;
+    color: #000;
+}
+
+.button-xp {
+    padding: 6px 12px;
+    background: linear-gradient(to bottom, #e0e0e0, #ffffff);
+    border: 1px solid #808080;
+    border-radius: 2px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #000;
+    margin-top: 10px;
+}
+
+.button-xp:hover {
+    background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+}

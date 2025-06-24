@@ -13,8 +13,8 @@
                     Um texto qualquer
                 </div>
                 <div class=" p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <a href="{{ route('new_game') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-md transition">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Create new game</h3>
+                    <a href="{{ route('dashboard') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-md transition">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Go to Dashboard</h3>
                         <p class="text-gray-600 dark:text-gray-300">Return to the main dashboard overview.</p>
                     </a>
                     <a href="{{ route('dashboard') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-md transition">
