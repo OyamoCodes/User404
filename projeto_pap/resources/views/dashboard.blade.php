@@ -13,9 +13,9 @@
                     Um texto qualquer
                 </div>
                 <div class=" p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <a href="{{ route('new_game') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-md transition">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Create new game</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Return to the main dashboard overview.</p>
+                    <a href="{{ route('games.create') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-md transition">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Criar um jogo novo</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Cria um jogo personalizado por <br> si!</p>
                     </a>
                     <a href="{{ route('dashboard') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-md transition">
                         <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Go to Dashboard</h3>
@@ -26,6 +26,25 @@
                         <p class="text-gray-600 dark:text-gray-300">Return to the main dashboard overview.</p>
                     </a>
                 </div>
+                @if($games->isNotEmpty())
+                <div class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    @foreach($games as $game)
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow p-6 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">{{ $game->title }}</h3>
+                            @if($game->school)
+                            <p class="text-gray-600 dark:text-gray-300 mb-1"><strong>Escola:</strong> {{ $game->school }}</p>
+                            @endif
+                            <p class="text-gray-600 dark:text-gray-300 mb-3"><strong>Código:</strong> {{ $game->code }}</p> 
+                        </div>
+                        <div class="mt-auto flex space-x-4">
+                            <a href="{{ route('games.show', $game->id) }}" class="text-blue-600 dark:text-blue-400 hover:underline">Ver</a>
+                            <a href="{{ route('games.show', $game->id) }}" class="text-green-600 dark:text-green-400 hover:underline">Editar</a>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                @endif
             </div>
         </div>
     </div>

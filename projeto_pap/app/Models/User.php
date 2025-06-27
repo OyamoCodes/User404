@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function games()
+    {
+        return $this->hasMany(\App\Models\Game::class, 'created_by');
+    }
 }
