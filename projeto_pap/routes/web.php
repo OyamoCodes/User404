@@ -33,9 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/games', [GameController::class, 'store'])->name('games.store');
     Route::get('/games/{game}', [GameController::class, 'show'])->name('games.show');
     Route::get('/games/{game}/edit', [GameController::class, 'edit'])->name('games.edit');
-    Route::get('/games/{game}/levels/new', [LevelController::class, 'create'])->name('level.create');
-    Route::post('/games/{game}/levels', [LevelController::class, 'store'])->name('level.store');
-
+    Route::get('/games/{game}/levels/new', [LevelController::class, 'create'])->name('games.level_create');
+   Route::post('/games/{game}/levels', [LevelController::class, 'store'])->name('games.level_store');
 });
 
 require __DIR__ . '/auth.php';

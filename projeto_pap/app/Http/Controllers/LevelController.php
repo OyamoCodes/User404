@@ -13,14 +13,14 @@ class LevelController extends Controller
     {
         $templates = Template::all();
 
-        return view('level.create', compact('game', 'templates'));
+        return view('games.level_create', compact('game', 'templates'));
     }
 
     public function store(Request $request, Game $game)
     {
         $request->validate([
             'template_id' => 'required|exists:templates,id',
-            'title' => 'required|string|max:255',
+            'theme' => 'required|string|max:255',
             'input_expected' => 'nullable|array',
             'output_expected' => 'nullable|array',
         ]);
@@ -28,7 +28,7 @@ class LevelController extends Controller
         Level::create([
             'game_id' => $game->id,
             'template_id' => $request->template_id,
-            'title' => $request->title,
+            'theme' => $request->theme,
             'input_expected' => $request->input_expected,
             'output_expected' => $request->output_expected,
         ]);

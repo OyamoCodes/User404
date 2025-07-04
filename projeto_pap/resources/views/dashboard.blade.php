@@ -39,7 +39,7 @@
                         </div>
                         <div class="mt-auto flex space-x-4">
                             <a href="{{ route('games.show', $game->id) }}" class="text-blue-600 dark:text-blue-400 hover:underline">Ver Informações</a>
-                            <a href="{{ route('level_create', $game->id) }}" class="text-green-600 dark:text-green-400 hover:underline"><i class="fa-regular fa-pen-to-square"></i>Editar</a>
+                            <a href="{{ route('games.edit', $game->id) }}" class="text-green-600 dark:text-green-400 hover:underline"><i class="fa-regular fa-pen-to-square"></i>Editar</a>
                         </div>
                     </div>
                     @endforeach

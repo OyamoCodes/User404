@@ -6,22 +6,21 @@
     </x-slot>
 
     <div class="max-w-4xl mx-auto mt-8 p-6 bg-white dark:bg-gray-800 rounded shadow">
-        <form action="{{ route('levels.store', $game->id) }}" method="POST">
+        <form action="{{ route('games.level_store', $game->id) }}" method="POST">
             @csrf
-
-            <div class="mb-4">
-                <label class="block text-gray-700 dark:text-gray-300">Título do Nível</label>
-                <input type="text" name="title" class="w-full rounded p-2 mt-1" required>
-            </div>
-
             <div class="mb-4">
                 <label class="block text-gray-700 dark:text-gray-300">Template</label>
                 <select name="template_id" id="template-selector" class="w-full rounded p-2 mt-1" required>
                     <option value="">-- Escolher --</option>
                     @foreach ($templates as $template)
-                        <option value="{{ $template->id }}">{{ $template->name }}</option>
+                    <option value="{{ $template->id }}">{{ $template->name }}</option>
                     @endforeach
                 </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 dark:text-gray-300">Título do Nível</label>
+                <input type="text" name="title" class="w-full rounded p-2 mt-1" required>
             </div>
 
             <div id="template-fields"></div>
@@ -36,7 +35,7 @@
         const templateFields = document.getElementById('template-fields');
         const selector = document.getElementById('template-selector');
 
-        selector.addEventListener('change', function () {
+        selector.addEventListener('change', function() {
             const selected = this.options[this.selectedIndex].text;
 
             templateFields.innerHTML = '';
@@ -45,11 +44,11 @@
                 templateFields.innerHTML = `
                     <div class="mb-4">
                         <label class="block text-gray-700 dark:text-gray-300">Pergunta do NPC</label>
-                        <input type="text" name="input_expected[pergunta]" class="w-full rounded p-2 mt-1">
+                        <input type="text" name="input_expected[pergunta]" placeholder= "ex: " class="w-full rounded p-2 mt-1">
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 dark:text-gray-300">Resposta esperada</label>
-                        <input type="text" name="output_expected[resposta]" class="w-full rounded p-2 mt-1">
+                        <input type="text" name="output_expected[resposta]" placeholder="" class="w-full rounded p-2 mt-1">
                     </div>
                 `;
             } else if (selected === 'hardware') {
@@ -57,11 +56,11 @@
                     <div class="mb-4">
                         <label class="block text-gray-700 dark:text-gray-300">Minijogos incluídos</label>
                         <label><input type="checkbox" name="input_expected[minijogos][]" value="montar_pc"> Montar PC</label><br>
-                        <label><input type="checkbox" name="input_expected[minijogos][]" value="quiz_componentes"> Quiz de Componentes</label>
+                        <label><input type="checkbox" name="input_expected[minijogos][]"value="quiz_componentes"> Quiz de Componentes</label>
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 dark:text-gray-300">Mensagem Final</label>
-                        <input type="text" name="output_expected[mensagem]" class="w-full rounded p-2 mt-1">
+                        <input type="text" name="output_expected[mensagem]" placeholder:"ex:" class="w-full rounded p-2 mt-1">
                     </div>
                 `;
             }

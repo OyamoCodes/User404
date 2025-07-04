@@ -12,7 +12,7 @@ class Level extends Model
     protected $fillable = [
         'game_id',
         'template_id',
-        'title',
+        'theme',
         'input_expected',
         'output_expected',
     ];

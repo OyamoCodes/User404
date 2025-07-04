@@ -10,9 +10,8 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6XtQ0v6tw7zQdqPQc9PzB0VdOgN+uD7nZp4O3+XZ+nprY+TK0xPPaSx+aV+Wy/8bTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /><!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papNM3D3rJkkvZ2QAlRfNwp3XUvhGn1scNw5Fa+W7K7eXsSTIkxFiT6hBjA5xuSpEvFmqA9Txan8XK+6KZxyAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
