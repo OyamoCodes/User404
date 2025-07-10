@@ -11,7 +11,7 @@ export function startDragTest() {
         outline(2, rgb(255, 0, 0)), // cor do contorno
         area(),
         "target"
-    ]);  b
+    ]);  
     
 
     const draggable = add([
@@ -43,7 +43,7 @@ export function startDragTest() {
             }
         }
     });
-    1
+    
     onUpdate(() => {
         if (isDragging) {
             draggable.pos = mousePos().sub(dragOffset);

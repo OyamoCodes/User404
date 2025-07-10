@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'datatables.net-bs4/css/dataTables.bootstrap4.min.css';
+@import 'datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css';
 
 * {
     box-sizing: border-box;
@@ -9,6 +11,7 @@
 
 body {
     font-size: 20px;
+    color: rgb(220, 220, 220);
 }
 
 h1 {
@@ -24,4 +27,66 @@ h2 {
 h3 {
     font-size: 24px;
     font-weight: bold;
+}
+
+ table.custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        font-size: 0.95rem;
+        background-color: #fff;
+        color: #333;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .custom-table thead {
+        background-color: #f5f5f5;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 12px 16px;
+        text-align: left;
+    }
+
+    .custom-table tbody tr {
+        border-top: 1px solid #eee;
+        transition: background 0.2s;
+    }
+
+    .custom-table tbody tr:hover {
+        background-color: #f0f4f8;
+    }
+
+    .custom-table img {
+        border-radius: 6px;
+        max-width: 70px;
+        height: auto;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .action-buttons a {
+        display: inline-block;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        border-radius: 4px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .action-buttons .btn-view { background-color: #3b82f6; }
+    .action-buttons .btn-edit { background-color: #10b981; }
+    .action-buttons .btn-levels { background-color: #8b5cf6; }
+
+    .action-buttons .btn-view:hover { background-color: #2563eb; }
+    .action-buttons .btn-edit:hover { background-color: #059669; }
+    .action-buttons .btn-levels:hover { background-color: #7c3aed; }
+    .dataTables_wrapper .dataTables_length select {
+    color: #000 !important;
+    background-color: #fff !important;
 }

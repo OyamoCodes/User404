@@ -1,5 +1,7 @@
 import { checkInputBox } from "./InputCheckers.js";
 import { guideLines } from "./Guide.js";
+import { text } from "kaboom";
+
 class UIGuide {
     constructor() {
         this.guideText = null;
@@ -9,14 +11,6 @@ class UIGuide {
     displayGuidedUI(guideProgress) {
         if (this.guideText) destroy(this.guideText);
         if (this.guideSprite) destroy(this.guideSprite);
-
-        this.guideSprite = add([
-            sprite("bonzi"),
-            fixed(),
-            scale(0.4),
-            z(150),
-            pos(1000, 100),
-        ]);
 
         this.guideText = add([
             text(guideLines.test[guideProgress] || "", {
@@ -35,6 +29,24 @@ class UIGuide {
         if (this.guideText) {
             this.guideText.text = guideLines.test[guideProgress] || "";
         }
+    }
+    showDialogue(speaker, dialogueTextContent) {
+        // Evita usar o nome "text" como variável
+        const speakerText = add([
+            text(speaker + ":", { size: 24 }), // usa a função global
+            pos(20, height() - 140),
+            color(255, 255, 255),
+            fixed(),
+            z(110),
+        ]);
+
+        const dialogueText = add([
+            text(dialogueTextContent, { size: 20, width: width() - 40 }),
+            pos(20, height() - 110),
+            color(255, 255, 255),
+            fixed(),
+            z(110),
+        ]);
     }
 }
 export function showInputBox(callback, player) {
@@ -77,7 +89,10 @@ export function showInputBox(callback, player) {
         if (callback) callback(inputText);
         checkInputBox(inputText, player);
     });
+
 }
 
 
 export const uiGuide = new UIGuide();
+
+

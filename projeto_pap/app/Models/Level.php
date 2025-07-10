@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Level extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable = [
         'game_id',
@@ -30,5 +31,10 @@ class Level extends Model
     public function template()
     {
         return $this->belongsTo(Template::class);
+    }
+
+    public function dialogues()
+    {
+        return $this->hasMany(Dialogue::class);
     }
 }

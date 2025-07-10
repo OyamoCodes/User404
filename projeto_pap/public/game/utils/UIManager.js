@@ -48,10 +48,23 @@ class UIManager {
         })
     }
 
-    displayMainMenu() {
+    displayMainMenu(title) {
+
         add([
             sprite("bg_menu"),
         ])
+        add([
+            text(title, { size: 32, 
+                font: "Tahoma", }),
+            pos(0, 0),
+            scale(0.7),
+        ]);
+        add([
+            text("TeachPlayLearn", { size: 32,
+                font: "Tahoma", }),
+            pos(0, 100),
+            scale(0.7),
+        ]);
         add([
             sprite("icon"),
             area(),
@@ -97,7 +110,6 @@ class UIManager {
             go("1")
         })
 
-        // Botão
         const controlsButton = add([
             rect(300, 75),
             pos(300, 400),
@@ -130,7 +142,7 @@ class UIManager {
         onKeyPress("enter", () => {
             go("controls");
         });
-        
+
     }
 
     displayControls() {
